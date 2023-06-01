@@ -69,12 +69,13 @@ local opts = {
 }
 
 local mappings = {
-    L = {
+    J = {
         name = "Java",
         r = { function() run_spring_boot() end, "Run" },
         d = { function() run_spring_boot(true) end, "Start Debugger" },
         a = { function() attach_to_debug() end, "Attach to debugger" },
         t = {
+            name = "Testing",
             m = { function() require('jdtls').test_nearest_method() end, "Test Method" },
             c = { function() require('jdtls').test_class() end, "Test Class" },
             a = { function() run_java_test_all() end, "All Tests" },
