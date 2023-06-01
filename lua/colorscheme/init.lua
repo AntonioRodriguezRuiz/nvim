@@ -1,12 +1,12 @@
-require('onedark').setup  {
+require('onedark').setup {
     -- Main options --
-    style = 'warmer', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-    transparent = true,  -- Show/hide background
-    ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
+    style = 'warmer',             -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    transparent = true,           -- Show/hide background
+    ending_tildes = false,        -- Show the end-of-buffer tildes. By default they are hidden
     cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
     -- toggle theme style ---
-    toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
+    toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }, -- List of styles to toggle between
 
     -- Change code style ---
     -- Options are italic, bold, underline, none
@@ -25,14 +25,14 @@ require('onedark').setup  {
     },
 
     -- Custom Highlights --
-    colors = {}, -- Override default colors
+    colors = {},     -- Override default colors
     highlights = {}, -- Override highlight groups
 
     -- Plugins Config --
     diagnostics = {
-        darker = true, -- darker colors for diagnostic
-        undercurl = true,   -- use undercurl instead of underline for diagnostics
-        background = true,    -- use background color for virtual text
+        darker = true,     -- darker colors for diagnostic
+        undercurl = true,  -- use undercurl instead of underline for diagnostics
+        background = true, -- use background color for virtual text
     },
 }
 require('onedark').load()

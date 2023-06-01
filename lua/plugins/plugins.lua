@@ -70,6 +70,7 @@ return require('packer').startup(function(use)
     -- DAP
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/cmp-dap'
+    use 'rcarriga/nvim-dap-ui'
 
     -- Term
     use 'akinsho/toggleterm.nvim'
