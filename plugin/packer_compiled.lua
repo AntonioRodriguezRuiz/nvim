@@ -264,11 +264,6 @@ _G.packer_plugins = {
     path = "/home/antonio/.local/share/nvim/site/pack/packer/start/pylsp-rope",
     url = "https://github.com/python-rope/pylsp-rope"
   },
-  ["swenv.nvim"] = {
-    loaded = true,
-    path = "/home/antonio/.local/share/nvim/site/pack/packer/start/swenv.nvim",
-    url = "https://github.com/AckslD/swenv.nvim"
-  },
   ["telescope-media-files.nvim"] = {
     loaded = true,
     path = "/home/antonio/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim",
@@ -283,6 +278,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/antonio/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["venv-selector.nvim"] = {
+    loaded = true,
+    path = "/home/antonio/.local/share/nvim/site/pack/packer/start/venv-selector.nvim",
+    url = "https://github.com/linux-cultist/venv-selector.nvim"
   },
   ["which-key.nvim"] = {
     loaded = true,

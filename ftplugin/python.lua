@@ -14,15 +14,16 @@ require('neotest').setup({
     }
 })
 
-require('swenv').setup({
-    -- Should return a list of tables with a `name` and a `path` entry each.
-    -- Gets the argument `venvs_path` set below.
-    -- By default just lists the entries in `venvs_path`.
-    get_venvs = function(venvs_path)
-        return require('swenv.api').get_venvs(venvs_path)
-    end,
-    -- Path passed to `get_venvs`.
-    venvs_path = vim.fn.expand('.'),
+require('venv-selector').setup({
+    auto_refresh = false,
+    search_venv_managers = true,
+    search_workspace = true,
+    search = true,
+    dap_enabled = true,
+    parents = 0,
+    name = { "venv", ".venv", "env", ".env" }, -- NOTE: You can also use a lua table here for multiple names: {"venv", ".venv"}`
+    fd_binary_name = "fd",
+    notify_user_on_activate = true,
 })
 
 local status_ok, which_key = pcall(require, "which-key")
@@ -42,9 +43,14 @@ local opts = {
 local mappings = {
     P = {
         name = "Python",
-        c = { "<cmd>lua require('swenv.api').pick_venv()<cr>", "Choose Env" },
-        r = { "<cmd>Debugpy program<cr>", "Debug file / program" },
-        d = { "<cmd>Debugpy attach 127.0.0.1 5678<cr>", "Attach (port 5678)" },
+        c = { "<cmd>VenvSelect<cr>", "Choose Env" },
+        r = { "<cmd>Debugpy program<cr>", "Run main" },
+        R = { function()
+            vim.ui.input({ prompt = 'File: ' },
+                function(input) vim.cmd("python " .. input) end)
+        end, "Run file" },
+        d = { "<cmd>Debugpy program<cr>", "Debug file / program" },
+        D = { "<cmd>Debugpy attach 127.0.0.1 5678<cr>", "Attach (port 5678)" },
         a = {
             function()
                 vim.ui.input({ prompt = 'Port: ' },

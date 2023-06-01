@@ -35,8 +35,7 @@ return require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'
     use 'folke/which-key.nvim'
     use 'stevearc/dressing.nvim'
-    use 'AckslD/swenv.nvim'
-
+    use 'linux-cultist/venv-selector.nvim'
     --Extensions
     use 'windwp/nvim-ts-autotag'
     use 'HiPhish/nvim-ts-rainbow2'
