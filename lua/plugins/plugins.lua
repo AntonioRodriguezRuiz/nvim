@@ -24,9 +24,9 @@ packer.init {
 return require('packer').startup(function(use)
     -- Requirements
     use 'nvim-tree/nvim-web-devicons'
-    use { 'nvim-tree/nvim-web-devicons', opt = true }
     use 'nvim-lua/plenary.nvim'
     use 'nvim-lua/popup.nvim'
+    use 'antoinemadec/FixCursorHold.nvim' -- neotest
 
     -- Essentials
     use 'wbthomason/packer.nvim'
@@ -34,6 +34,8 @@ return require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
     use 'neovim/nvim-lspconfig'
     use 'folke/which-key.nvim'
+    use 'stevearc/dressing.nvim'
+    use 'AckslD/swenv.nvim'
 
     --Extensions
     use 'windwp/nvim-ts-autotag'
@@ -56,21 +58,32 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
 
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip'
+    use 'L3MON4D3/LuaSnip'
+    use 'rafamadriz/friendly-snippets'
 
     use 'onsails/lspkind.nvim'
+
+    use 'github/copilot.vim'
+    use 'zbirenbaum/copilot-cmp'
 
     -- LSP
     use { "williamboman/mason.nvim", run = ":MasonUpdate" } -- :MasonUpdate updates registry contents
     use 'williamboman/mason-lspconfig.nvim'
     use 'jose-elias-alvarez/null-ls.nvim'
     use 'mfussenegger/nvim-jdtls'
+    use 'python-rope/pylsp-rope'
+    use 'mfussenegger/nvim-dap-python'
 
     -- DAP
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/cmp-dap'
     use 'rcarriga/nvim-dap-ui'
+    use 'theHamsta/nvim-dap-virtual-text'
+    use 'HiPhish/debugpy.nvim'
+
+    -- Tests
+    use 'nvim-neotest/neotest'
+    use 'nvim-neotest/neotest-python'
 
     -- Term
     use 'akinsho/toggleterm.nvim'
