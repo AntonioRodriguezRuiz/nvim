@@ -8,6 +8,7 @@ vim.g.mapleader = " "
 -- Normal Mode
 keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
+keymap("n", "Y", "yg$", opts)
 
 -- Move between splits
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -39,6 +40,7 @@ keymap("i", "kj", "<ESC>", opts)
 -- Visual Mode
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<leader>p", "\"_dP", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
