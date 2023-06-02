@@ -10,10 +10,14 @@ local mappings = {
         "Search for files",
     },
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-    ["w"] = { "<cmd>w!<CR>", "Save" },
-    ["q"] = { "<cmd>q<CR>", "Quit" },
-    ["c"] = { "<cmd>cd<CR>", "Close Buffer" },
+    ["w"] = { "<cmd>w<CR>", "Save" },
+    ["q"] = { "<cmd>qa<CR>", "Quit" },
+    ["c"] = { "<cmd>:Bdelete<CR>", "Close Buffer" },
+    ["W"] = { "<cmd>w!<CR>", "Force Save" },
+    ["Q"] = { "<cmd>qa!<CR>", "Force Quit" },
+    ["C"] = { "<cmd>:Bdelete!<CR>", "Force Close Buffer" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+    ["H"] = { "<cmd>hlsearch<CR>", "Highlight" },
 
     p = {
         name = "Packer",
@@ -107,6 +111,16 @@ local mappings = {
         B = { '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Condition: "))<CR>', "Set breakpoint with condition" },
         l = { '<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log: "))<CR>', "Log breakpoint" },
         r = { '<cmd>lua require"dap".repl.open()<CR>', "Debug Console" },
+        x = { "<cmd>lua require'dap'.terminate()<cr>", "Terminate" },
+    },
+
+    S = {
+        name = "Splits / Tabs",
+        v = { '<cmd>vsplit<CR>', "Vertical" },
+        h = { '<cmd>split<CR>', "Horizontal" },
+        t = { '<cmd>tabnew %<CR>', "New tab" },
+        c = { '<cmd>tabclose<CR>', "Close tab" },
+        m = { 'gt', "Move to next tab" },
     }
 }
 

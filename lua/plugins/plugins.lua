@@ -34,15 +34,18 @@ return require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
     use 'neovim/nvim-lspconfig'
     use 'folke/which-key.nvim'
-    use 'stevearc/dressing.nvim'
-    use 'linux-cultist/venv-selector.nvim'
+    use 'moll/vim-bbye'
+
     --Extensions
     use 'windwp/nvim-ts-autotag'
     use 'HiPhish/nvim-ts-rainbow2'
     use 'windwp/nvim-autopairs'
+    use 'stevearc/dressing.nvim'
+    use 'linux-cultist/venv-selector.nvim'
 
     use 'nvim-telescope/telescope-media-files.nvim'
 
+    use { 'lewis6991/gitsigns.nvim' }
     -- Lualine, Bufferline, NVim tree, Telescope
     use 'nvim-lualine/lualine.nvim'
     use { 'akinsho/bufferline.nvim', tag = "*" }
@@ -62,8 +65,7 @@ return require('packer').startup(function(use)
 
     use 'onsails/lspkind.nvim'
 
-    use 'github/copilot.vim'
-    use 'zbirenbaum/copilot-cmp'
+    use "github/copilot.vim"
 
     -- LSP
     use { "williamboman/mason.nvim", run = ":MasonUpdate" } -- :MasonUpdate updates registry contents
