@@ -6,14 +6,20 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 
 -- Normal Mode
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
+
+-- Move between splits
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "<C-c>", "<C-w>q", opts)
 
-keymap("n", "n", "nzzzv", opts)
-keymap("n", "N", "Nzzzv", opts)
+-- Resize Splits
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
@@ -23,8 +29,8 @@ keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
 keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<A-l>", ":BufferLineMoveNext<CR>", opts)
 keymap("n", "<A-h>", ":BufferLineMovePrev<CR>", opts)
-
-keymap("n", "<C-w>", ":bd<CR>", opts)
+keymap("n", "<C-c>", ":q<CR>", opts)
+keymap("n", "<C-w>", ":Bdelete<CR>", opts)
 
 -- Instert Mode
 keymap("i", "jk", "<ESC>", opts)
