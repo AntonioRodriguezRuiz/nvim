@@ -1,6 +1,5 @@
 local dap, dapui = require("dap"), require("dapui")
 
-
 dap.listeners.after.event_initialized["dapui_config"] = function()
     dapui.open()
 end
@@ -12,23 +11,6 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 end
 
 dapui.setup({
-    controls = {
-        element = "scopes",
-        enabled = true,
-        icons = {
-            disconnect = "",
-            pause = "",
-            play = "",
-            run_last = "",
-            step_back = "",
-            step_into = "",
-            step_out = "",
-            step_over = "",
-            terminate = ""
-        }
-    },
-    element_mappings = {},
-    expand_lines = true,
     floating = {
         border = "single",
         mappings = {
@@ -36,11 +18,6 @@ dapui.setup({
         }
     },
     force_buffers = true,
-    icons = {
-        collapsed = "",
-        current_frame = "",
-        expanded = ""
-    },
     layouts = { {
         elements = { {
             id = "scopes",

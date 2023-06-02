@@ -1,5 +1,7 @@
 local home = os.getenv "HOME"
-require('dap-python').setup(home .. "/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
+local dap_python = require('dap-python')
+
+dap_python.setup(home .. "/.local/share/nvim/mason/packages/debugpy/venv/bin/python", { console = "internalConsole" })
 
 require('neotest').setup({
     adapters = {

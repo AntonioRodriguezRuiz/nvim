@@ -1,88 +1,78 @@
 return {
-  tools = {
-    -- autoSetHints = false,
-    on_initialized = function()
-      vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "CursorHold", "InsertLeave" }, {
-        pattern = { "*.rs" },
-        callback = function()
-          vim.lsp.codelens.refresh()
+    tools = {
+        -- autoSetHints = false,
+        on_initialized = function()
+            vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "CursorHold", "InsertLeave" }, {
+                pattern = { "*.rs" },
+                callback = function()
+                    vim.lsp.codelens.refresh()
+                end,
+            })
         end,
-      })
-    end,
 
-    auto = false,
-    inlay_hints = {
-      -- Only show inlay hints for the current line
-      only_current_line = false,
-      auto = false,
+        auto = false,
+        inlay_hints = {
+            -- Only show inlay hints for the current line
+            only_current_line = false,
+            auto = false,
 
-      -- Event which triggers a refersh of the inlay hints.
-      -- You can make this "CursorMoved" or "CursorMoved,CursorMovedI" but
-      -- not that this may cause higher CPU usage.
-      -- This option is only respected when only_current_line and
-      -- autoSetHints both are true.
-      only_current_line_autocmd = "CursorHold",
+            -- Event which triggers a refersh of the inlay hints.
+            -- You can make this "CursorMoved" or "CursorMoved,CursorMovedI" but
+            -- not that this may cause higher CPU usage.
+            -- This option is only respected when only_current_line and
+            -- autoSetHints both are true.
+            only_current_line_autocmd = "CursorHold",
 
-      -- whether to show parameter hints with the inlay hints or not
-      -- default: true
-      show_parameter_hints = false,
+            -- whether to show parameter hints with the inlay hints or not
+            -- default: true
+            show_parameter_hints = true,
 
-      -- whether to show variable name before type hints with the inlay hints or not
-      -- default: false
-      show_variable_name = false,
+            -- whether to show variable name before type hints with the inlay hints or not
+            -- default: false
+            show_variable_name = false,
 
-      -- prefix for parameter hints
-      -- default: "<-"
-      -- parameter_hints_prefix = "<- ",
-      parameter_hints_prefix = " ",
+            -- whether to align to the lenght of the longest line in the file
+            max_len_align = false,
 
-      -- prefix for all the other hints (type, chaining)
-      -- default: "=>"
-      -- other_hints_prefix = "=> ",
-      other_hints_prefix = " ",
+            -- padding from the left if max_len_align is true
+            max_len_align_padding = 1,
 
-      -- whether to align to the lenght of the longest line in the file
-      max_len_align = false,
+            -- whether to align to the extreme right or not
+            right_align = false,
 
-      -- padding from the left if max_len_align is true
-      max_len_align_padding = 1,
+            -- padding from the right if right_align is true
+            right_align_padding = 7,
 
-      -- whether to align to the extreme right or not
-      right_align = false,
-
-      -- padding from the right if right_align is true
-      right_align_padding = 7,
-
-      -- The color of the hints
-      highlight = "Comment",
+            -- The color of the hints
+            highlight = "Comment",
+        },
+        hover_actions = {
+            auto_focus = false,
+            border = "rounded",
+            width = 60,
+            -- height = 30,
+        },
     },
-    hover_actions = {
-      auto_focus = false,
-      border = "rounded",
-      width = 60,
-      -- height = 30,
-    },
-  },
-  server = {
-    --[[
+    server = {
+        --[[
         $ mkdir -p ~/.local/bin
         $ curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
         $ chmod +x ~/.local/bin/rust-analyzer
     --]]
-    -- cmd = { os.getenv "HOME" .. "/.local/bin/rust-analyzer" },
-    cmd = { "rustup", "run", "nightly", os.getenv "HOME" .. "/.local/bin/rust-analyzer" },
-    on_attach = require("lsp-config.handlers").on_attach,
-    capabilities = require("lsp-config.handlers").capabilities,
+        -- cmd = { os.getenv "HOME" .. "/.local/bin/rust-analyzer" },
+        cmd = { "rustup", "run", "nightly", os.getenv "HOME" .. "/.local/bin/rust-analyzer" },
+        on_attach = require("lsp-config.handlers").on_attach,
+        capabilities = require("lsp-config.handlers").capabilities,
 
-    settings = {
-      ["rust-analyzer"] = {
-        lens = {
-          enable = true,
+        settings = {
+            ["rust-analyzer"] = {
+                lens = {
+                    enable = true,
+                },
+                checkOnSave = {
+                    command = "clippy",
+                },
+            },
         },
-        checkOnSave = {
-          command = "clippy",
-        },
-      },
     },
-  },
 }

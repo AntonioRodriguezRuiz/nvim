@@ -74,6 +74,7 @@ return require('packer').startup(function(use)
     use 'mfussenegger/nvim-jdtls'
     use 'python-rope/pylsp-rope'
     use 'mfussenegger/nvim-dap-python'
+    use 'simrat39/rust-tools.nvim'
 
     -- DAP
     use 'mfussenegger/nvim-dap'
