@@ -11,7 +11,7 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
-    on_attach= on_attach,
+    on_attach = on_attach,
     disable_netrw = true,
     hijack_netrw = true,
     open_on_tab = false,
@@ -37,7 +37,7 @@ nvim_tree.setup {
     },
     git = {
         enable = true,
-        ignore = true,
+        ignore = false,
         timeout = 500,
     },
     view = {
