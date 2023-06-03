@@ -1,6 +1,6 @@
 local opts = {
     tools = {
-            -- rust-tools options
+        -- rust-tools options
 
         -- how to execute terminal commands
         -- options right now: termopen / quickfix
@@ -165,11 +165,9 @@ local opts = {
 
     -- debugging stuff
     dap = {
-        adapter = {
-            type = "executable",
-            command = "lldb-vscode",
-            name = "rt_lldb",
-        },
+        adapter = require('rust-tools.dap').get_codelldb_adapter(
+            "/home/antonio/.local/share/nvim/mason/packages/codelldb/codelldb",
+            "/home/antonio/.local/share/nvim/mason/packages/codelldb/extension/lldb/lib/liblldb.so")
     },
 }
 
