@@ -4,12 +4,12 @@ if not status_ok then
 end
 
 local opts = {
-    mode = "n",   -- NORMAL mode
+    mode = "n",     -- NORMAL mode
     prefix = "<leader>",
-    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = true, -- use `silent` when creating keymaps
+    buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
+    silent = true,  -- use `silent` when creating keymaps
     noremap = true, -- use `noremap` when creating keymaps
-    nowait = true, -- use `nowait` when creating keymaps
+    nowait = true,  -- use `nowait` when creating keymaps
 }
 
 local mappings = {
@@ -34,7 +34,7 @@ local mappings = {
         o = { "<cmd>RustOpenExternalDocs<Cr>", "Open External Docs" },
         -- h = { "<cmd>RustSetInlayHints<Cr>", "Enable Hints" },
         -- H = { "<cmd>RustDisableInlayHints<Cr>", "Disable Hints" },
-        -- a = { "<cmd>RustHoverActions<Cr>", "Hover Actions" },
+        a = { "<cmd>RustHoverActions<Cr>", "Hover Actions" },
         -- a = { "<cmd>RustHoverRange<Cr>", "Hover Range" },
         -- j = { "<cmd>RustMoveItemDown<Cr>", "Move Item Down" },
         -- k = { "<cmd>RustMoveItemUp<Cr>", "Move Item Up" },
@@ -51,5 +51,3 @@ vim.notify = function(msg, ...)
 
     notify_filter(msg, ...)
 end
-
-vim.api.nvim_set_keymap("n", "<m-d>", "<cmd>RustOpenExternalDocs<Cr>", { noremap = true, silent = true })
