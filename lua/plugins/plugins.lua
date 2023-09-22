@@ -90,6 +90,16 @@ return require('packer').startup(function(use)
     -- Term
     use 'akinsho/toggleterm.nvim'
 
+    -- MARKDOWN
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
