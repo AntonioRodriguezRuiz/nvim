@@ -23,7 +23,7 @@ require('venv-selector').setup({
     search_workspace = true,
     search = true,
     dap_enabled = true,
-    parents = 0,
+    parents = 2,
     name = { "venv", ".venv", "env", ".env" }, -- NOTE: You can also use a lua table here for multiple names: {"venv", ".venv"}`
     fd_binary_name = "fd",
     notify_user_on_activate = true,
