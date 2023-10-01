@@ -1,6 +1,6 @@
 local servers = {
     "lua_ls",
-    "pylsp",
+    "pyright",
     "jsonls",
     "rust_analyzer",
     "jdtls",
@@ -53,6 +53,12 @@ for _, server in pairs(servers) do
             return
         end
         rust_tools.setup(rust_opts)
+        goto continue
+    end
+
+    if server == "pyright" then
+        local pyright_opts = require "lsp-config.settings.pyright"
+        require 'lspconfig'.pyright.setup(pyright_opts)
         goto continue
     end
 
