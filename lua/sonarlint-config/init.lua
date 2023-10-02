@@ -4,7 +4,7 @@ MASON_PTH = home .. "/.local/share/nvim/mason/packages/sonarlint-language-server
 require("sonarlint-config.sonarlint").setup({
 	server = {
 		cmd = {
-			MASON_PTH .. "$MASON/sonarlint-language-server",
+			MASON_PTH .. "/sonarlint-language-server",
 			-- Ensure that sonarlint-language-server uses stdio channel
 			"-stdio",
 			"-analyzers",
