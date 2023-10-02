@@ -105,7 +105,7 @@ local config = {
 		-- 💀
 		"-jar",
 		home
-			.. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
+			.. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20230717-2134.jar",
 		-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
 		-- Must point to the                                                     Change this to
 		-- eclipse.jdt.ls installation                                           the actual version
@@ -154,8 +154,12 @@ jdtls.start_or_attach(config)
 
 -- require('jdtls').setup_dap()
 
-vim.cmd("command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)")
-vim.cmd("command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)")
+vim.cmd(
+	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)"
+)
+vim.cmd(
+	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_set_runtime JdtSetRuntime lua require('jdtls').set_runtime(<f-args>)"
+)
 vim.cmd("command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()")
 -- vim.cmd "command! -buffer JdtJol lua require('jdtls').jol()"
 vim.cmd("command! -buffer JdtRefreshDebugConfig lua require('jdtls.dap').setup_dap_main_class_configs()")
