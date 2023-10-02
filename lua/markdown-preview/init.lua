@@ -1,5 +1,5 @@
 vim.api.nvim_exec(
-    [[
+	[[
     " set to 1, nvim will open the preview window after entering the markdown buffer
     " default: 0
     let g:mkdp_auto_start = 0
@@ -99,5 +99,5 @@ vim.api.nvim_exec(
     " By default the theme is define according to the preferences of the system
     let g:mkdp_theme = 'dark'
     ]],
-    false
+	false
 )

@@ -40,12 +40,12 @@ keymap("i", "kj", "<ESC>", opts)
 -- Visual Mode
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<leader>p", "\"_dP", opts)
+keymap("x", "<leader>p", '"_dP', opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Dap
-keymap('n', '<F5>', ':lua require"dap".continue()<CR>', opts)
-keymap('n', '<F6>', ':lua require"dap".step_over()<CR>', opts)
-keymap('n', '<F7>', ':lua require"dap".step_into()<CR>', opts)
-keymap('n', '<F8>', ':lua require"dap".step_out()<CR>', opts)
+keymap("n", "<F5>", ':lua require"dap".continue()<CR>', opts)
+keymap("n", "<F6>", ':lua require"dap".step_over()<CR>', opts)
+keymap("n", "<F7>", ':lua require"dap".step_into()<CR>', opts)
+keymap("n", "<F8>", ':lua require"dap".step_out()<CR>', opts)
