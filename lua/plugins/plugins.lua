@@ -65,7 +65,7 @@ return require("packer").startup(function(use)
 
 	use("onsails/lspkind.nvim")
 
-	use("github/copilot.vim")
+	use({ "zbirenbaum/copilot.lua" })
 
 	-- LSP
 	use({ "williamboman/mason.nvim", run = ":MasonUpdate" }) -- :MasonUpdate updates registry contents
