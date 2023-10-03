@@ -58,6 +58,7 @@ for _, server in pairs(servers) do
 
 	if server == "pyright" then
 		local pyright_opts = require("lsp-config.settings.pyright")
+		lspconfig.pyright.setup(pyright_opts)
 		require("lspconfig").pyright.setup(pyright_opts)
 		goto continue
 	end
