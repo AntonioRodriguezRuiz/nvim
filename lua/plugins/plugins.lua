@@ -51,7 +51,7 @@ return require("packer").startup(function(use)
 	use({ "akinsho/bufferline.nvim", tag = "*" })
 	use("nvim-tree/nvim-tree.lua")
 
-	use({ "nvim-telescope/telescope.nvim", tag = "0.1.1" })
+	use("nvim-telescope/telescope.nvim")
 
 	-- CMP
 	use("hrsh7th/nvim-cmp")
