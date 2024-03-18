@@ -15,5 +15,7 @@ null_ls.setup({
 		formatting.isort,
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
+		-- Eslint linter
+		diagnostics.eslint,
 	},
 })

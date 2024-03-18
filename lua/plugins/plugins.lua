@@ -75,6 +75,10 @@ return require("packer").startup(function(use)
 	use("python-rope/pylsp-rope")
 	use("mfussenegger/nvim-dap-python")
 	use("simrat39/rust-tools.nvim")
+	use({
+		"pmizio/typescript-tools.nvim",
+		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+	})
 
 	-- DAP
 	use("mfussenegger/nvim-dap")
