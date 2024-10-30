@@ -83,7 +83,10 @@ return require("packer").startup(function(use)
 	-- DAP
 	use("mfussenegger/nvim-dap")
 	use("rcarriga/cmp-dap")
-	use("rcarriga/nvim-dap-ui")
+	use({
+		"rcarriga/nvim-dap-ui",
+		requires = { "nvim-neotest/nvim-nio" },
+	})
 	use("theHamsta/nvim-dap-virtual-text")
 	use("HiPhish/debugpy.nvim")
 
