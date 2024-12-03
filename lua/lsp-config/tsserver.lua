@@ -11,11 +11,6 @@ require("typescript-tools").setup({
 			if err ~= nil or result == nil then
 				return
 			end
-			local file_changed = false
-			vim.lsp.buf.execute_command({
-				command = "tsserver.organizeImports",
-				arguments = { vim.api.nvim_buf_get_name(0) },
-			})
 			vim.api.nvim_command("noautocmd :w")
 			print("Es como FOCK")
 		end,

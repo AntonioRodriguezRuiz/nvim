@@ -35,6 +35,7 @@ return require("packer").startup(function(use)
 	use("neovim/nvim-lspconfig")
 	use("folke/which-key.nvim")
 	use("moll/vim-bbye")
+	use("norcalli/nvim-colorizer.lua")
 
 	--Extensions
 	use("windwp/nvim-ts-autotag")
@@ -74,7 +75,8 @@ return require("packer").startup(function(use)
 	use("mfussenegger/nvim-jdtls")
 	use("python-rope/pylsp-rope")
 	use("mfussenegger/nvim-dap-python")
-	use("simrat39/rust-tools.nvim")
+	use("mrcjkb/rustaceanvim")
+	use("chrisgrieser/nvim-lsp-endhints")
 	use({
 		"pmizio/typescript-tools.nvim",
 		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
