@@ -17,5 +17,6 @@ null_ls.setup({
 		-- Eslint linter
 		diagnostics.eslint,
 		formatting.eslint,
+		formatting.clang_format,
 	},
 })

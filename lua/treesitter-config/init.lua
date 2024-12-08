@@ -34,18 +34,7 @@ require("nvim-treesitter.configs").setup({
 		-- Instead of true it can also be a list of languages
 		additional_vim_regex_highlighting = false,
 	},
-	autopairs = {
+	incremental_selection = {
 		enable = true,
-	},
-	autotag = {
-		enable = true,
-	},
-	rainbow = {
-		enable = true,
-		extended_mode = false,
-		-- Which query to use for finding delimiters
-		query = "rainbow-parens",
-		-- Highlight the entire buffer all at once
-		strategy = require("ts-rainbow").strategy.global,
 	},
 })
