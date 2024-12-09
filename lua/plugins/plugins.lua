@@ -71,6 +71,12 @@ return require("packer").startup(function(use)
 	-- LSP
 	use({ "williamboman/mason.nvim", run = ":MasonUpdate" }) -- :MasonUpdate updates registry contents
 	use("jay-babu/mason-nvim-dap.nvim")
+	use({
+		"stevearc/overseer.nvim",
+		config = function()
+			require("overseer").setup()
+		end,
+	})
 	use("williamboman/mason-lspconfig.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("mfussenegger/nvim-jdtls")
