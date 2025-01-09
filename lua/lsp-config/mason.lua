@@ -1,6 +1,7 @@
 local servers = {
 	"lua_ls",
 	"pyright",
+	"ruff",
 	"jsonls",
 	"rust_analyzer",
 	"jdtls",
@@ -58,6 +59,12 @@ for _, server in pairs(servers) do
 
 	if server == "rust_analyzer" then
 		require("lsp-config.settings.rust")
+		goto continue
+	end
+
+	if server == "ruff" then
+		local ruff_opts = require("lsp-config.settings.ruff")
+		lspconfig.ruff.setup(ruff_opts)
 		goto continue
 	end
 
