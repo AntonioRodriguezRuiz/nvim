@@ -6,6 +6,7 @@ local servers = {
 	"rust_analyzer",
 	"jdtls",
 	"clangd",
+	"elixirls",
 }
 
 local settings = {
@@ -51,6 +52,11 @@ for _, server in pairs(servers) do
 	}
 
 	server = vim.split(server, "@")[1]
+
+	if server == "elixirls" then
+		require("lsp-config.settings.elixirls")
+		goto continue
+	end
 
 	local require_ok, conf_opts = pcall(require, "lsp-config.settings." .. server)
 	if require_ok then

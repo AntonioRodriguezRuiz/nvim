@@ -88,6 +88,7 @@ return require("packer").startup(function(use)
         "pmizio/typescript-tools.nvim",
         requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     })
+    use({ "elixir-tools/elixir-tools.nvim", tag = "stable", requires = { "nvim-lua/plenary.nvim" } })
 
     -- DAP
     use("mfussenegger/nvim-dap")
